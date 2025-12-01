@@ -188,7 +188,7 @@
         set text(
           font: (font-en, font-hei),
           weight: "bold",
-          size: size-no4,
+          size: size-small-no4,
         )
         caption-it
       }
