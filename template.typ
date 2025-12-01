@@ -17,6 +17,7 @@
 #let size-no5 = 10.5pt    // 五号 (页眉页脚)
 
 #let indent = h(2em)
+#let noindent = h(-2em)
 
 #let fakepar = context {
   let b = par(box())
@@ -95,6 +96,11 @@
   show strong: it => {
     text(stroke: 0.028em + black, it.body)
   }
+
+  // 强制代码块使用 Consolas (Win) 或 Courier New (Mac)，
+  // 中文回退到黑体 (SimHei)，看起来更像现代 IDE 的风格。
+  show raw: set text(font: ("Consolas", "Courier New", "SimHei"))
+
 
   // 规范要求：行距固定值 23 磅。
   // Typst 中 leading 是行间距。字号 12pt，行距 23pt，则 leading = 11pt。
