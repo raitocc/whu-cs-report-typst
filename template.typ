@@ -172,6 +172,12 @@
     text(font: (font-en,font-hei), weight: "bold", number-str)
   })
 
+  // 单行公式后默认缩进
+  show math.equation.where(block: true): it => {
+    it
+    fakepar
+  }
+
   // 图表样式 (Figure)
   set figure(gap: 1.2em) // Caption和内容之间的间距
   show figure: it => {
@@ -196,6 +202,7 @@
       set text(size: size-no5)
       // 渲染
       it
+fakepar
     } 
     else {
       // --- 图片样式 ---
@@ -212,6 +219,7 @@
       }
       // 图片内容保持默认字号 (或者也改成 5 号，看需求，通常图片里没有字)
       it
+      fakepar
     }
   }
 
