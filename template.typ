@@ -217,6 +217,7 @@
 
   // 图表编号重置逻辑
   show heading.where(level: 1): it => {
+    counter(math.equation).update(0)
     counter(figure.where(kind: table)).update(0)
     counter(figure.where(kind: image)).update(0)
     it
